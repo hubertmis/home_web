@@ -1,0 +1,12 @@
+[package]
+name = "home_web"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+axum = { version = "0.7.5", features = ["macros"] }
+ciborium = "0.2"
+home_mng = { path = "../home_mng" }
+serde = "1.0.210"
+tera = "1"
+tokio = { version = "1.40.0", features = ["macros", "rt-multi-thread"] }
