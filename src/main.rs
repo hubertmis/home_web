@@ -42,7 +42,11 @@ impl std::fmt::Display for Error {
 impl std::error::Error for Error {}
 
 static TERA: LazyLock<Tera> = LazyLock::new(|| {
-    match Tera::new("templates/**/*.html") {
+    // TODO: Replace with a path from a command line
+    let path = std::path::absolute(env!("CARGO_MANIFEST_DIR")).unwrap()
+        .to_str().unwrap()
+        .to_string();
+    match Tera::new(&(path + "/templates/**/*.html")) {
         Ok(t) => t,
         Err(e) => {
             println!("Parsing error: {}", e);
