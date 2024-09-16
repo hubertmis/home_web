@@ -98,10 +98,11 @@ async fn list_services() -> Html<String> {
     let services = SERVICE_DISCOVERY.all();
 
     let mut context = Context::new();
-    let services: Vec<_> = services.iter().map(|s| {
+    let mut services: Vec<_> = services.iter().map(|s| {
             (&s.0, get_service_name(&s.0).unwrap_or(&s.0), &s.1, s.2)
         })
         .collect();
+    services.sort_by_key(|k| (k.2, k.1));
     context.insert("services", &services);
     Html(TERA.render("services.html", &context).unwrap())
 }
