@@ -1,0 +1,13 @@
+[Unit]
+Description=Web interface for home management
+Requires=systemd-networkd-wait-online.service
+After=systemd-networkd-wait-online.service
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=5
+ExecStart=/usr/local/bin/home_web
+
+[Install]
+WantedBy=multi-user.target
