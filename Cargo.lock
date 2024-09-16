@@ -978,6 +978,7 @@ dependencies = [
 [[package]]
 name = "home_mng"
 version = "0.1.0"
+source = "git+https://github.com/hubertmis/home_mng.git?rev=b094a5d#b094a5d798fbf6388cf088927d9f7fcd1c9d883c"
 dependencies = [
  "ciborium",
  "clap",

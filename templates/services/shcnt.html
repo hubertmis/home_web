@@ -1,0 +1,10 @@
+{% extends "services/base.html" %}
+{% block content %}
+{{ super() }}
+<form method="post">
+	<label for="pos">Requested position</label>
+	<input type="range" id="pos" name="pos" min="0" max="255" value="{{pos}}" style="writing-mode: vertical-lr; direction: rtl; appearance: slider-vertical; vertical-align: top; transform: rotate(180deg);"/><br/>
+
+	<input type="submit" value="Set"/><br/>
+</form>
+{% endblock content %}
