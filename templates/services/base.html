@@ -1,5 +1,11 @@
 {% extends "base.html" %}
 {% block content %}
-	<a href="../services">Service list</a></br>
-	<b>{{name}}</b><br/>
+	<div>
+		<a href="../services">Service list</a></br>
+	</div>
+	<div>
+	{% block service %}
+		<b>{{name}}</b>
+	{% endblock service %}
+	</div>
 {% endblock content %}

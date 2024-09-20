@@ -1,10 +1,12 @@
 {% extends "services/base.html" %}
-{% block content %}
+{% block service %}
 {{ super() }}
-<form method="post">
-	<label for="pos">Requested position</label>
-	<input type="range" id="pos" name="pos" min="0" max="255" value="{{pos}}" style="writing-mode: vertical-lr; direction: rtl; appearance: slider-vertical; vertical-align: top; transform: rotate(180deg);"/><br/>
+<form method="post" style="margin: auto; max-width: 800px; display: flex; flex-direction: column;">
+	<div style="display: flex; align-items: center; margin: 1rem">
+		<label for="pos" style="margin: 1rem">Requested position</label>
+		<input type="range" id="pos" name="pos" min="0" max="255" value="{{pos}}" style="writing-mode: vertical-lr; direction: rtl; appearance: slider-vertical; vertical-align: top; transform: rotate(180deg);"/>
+	</div>
 
-	<input type="submit" value="Set"/><br/>
+	<input type="submit" value="Set" style="margin: 1rem"/>
 </form>
-{% endblock content %}
+{% endblock service %}

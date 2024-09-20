@@ -1,13 +1,17 @@
 {% extends "services/base.html" %}
-{% block content %}
+{% block service %}
 {{ super() }}
-<form method="post">
+<form method="post" style="margin: auto; max-width: 800px; display: flex; flex-direction: column;">
 
-	<label for="rgb">RGB</label>
-	<input type="color" id="rgb" name="rgb" value="{{rgb}}"/><br/>
-	<label for="w">W</label>
-	<input type="range" id="w" name="w" min="0" max="255" value="{{w}}"/><br/>
+	<div style="display: flex; align-items: center; margin: 1rem">
+		<label for="rgb" style="margin: 1rem">RGB</label>
+		<input type="color" id="rgb" name="rgb" value="{{rgb}}" style="flex-grow: 1"/><br/>
+	</div>
+	<div style="display: flex; align-items: center; margin: 1rem">
+		<label for="w" style="margin: 1rem">W</label>
+		<input type="range" id="w" name="w" min="0" max="255" value="{{w}}" style="flex-grow: 1"/><br/>
+	</div>
 
-	<input type="submit" value="Set"/><br/>
+	<input type="submit" value="Set" style="margin: 1rem"/><br/>
 </form>
-{% endblock content %}
+{% endblock service %}
